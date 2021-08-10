@@ -8,6 +8,8 @@ SigLoader is a basic loader which takes a modified PE file path created by SigIn
 
 SigFlip will check if PE hash was successfully changed and also check and exit gracefully in case endpoints are hardened against such common misconfiguration. (check "Details" section).
 
+**Quick Note:** SigFlip, SigInject and SigLoader are available as BOF scripts and .NET assemblies, the only difference is that SigInject functionality is implemented as part of SigFlip (-i) in case if you choose to use .NET artifacts instead of BOFs.
+
 ### Why ?
 
 It can be used mainly for persistence, lateral movement or code/command execution and can help with:
@@ -31,6 +33,8 @@ Precompiled BOF's are not provided in this project, can be compiled using Mingw-
 * `➜ i686-w64-mingw32-gcc -c SigLoader/sigloader.c -o sigloader.x86.o`
 
 Make sure all object files are located in the same directory as sigflip.cna, then load sigflip.cna script to cobalt strike.
+
+If you're using Mingw-64 >= 9.0.0, you may want to check https://github.com/med0x2e/SigFlip/issues/2#issuecomment-895521580 to get BOFs built with no errors.
 	
 #### Cobalt Strike:
 1. **Execute-Assembly**
